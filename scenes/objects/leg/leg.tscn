@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://7o1glmkv2a0l"]
+
+[ext_resource type="Script" uid="uid://cbnbyutuwn60k" path="res://scenes/objects/leg/leg.gd" id="1_4ia5t"]
+
+[node name="leg" type="Node2D"]
+script = ExtResource("1_4ia5t")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://k6i5232v2s7e"]
+
+[ext_resource type="Script" uid="uid://bmtlkr6r4skxh" path="res://scenes/objects/creature/creature.gd" id="1_j0gsq"]
+[ext_resource type="PackedScene" uid="uid://7o1glmkv2a0l" path="res://scenes/objects/leg/leg.tscn" id="2_5f0cp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f0cp"]
+size = Vector2(32, 16)
+
+[node name="creature" type="CharacterBody2D"]
+script = ExtResource("1_j0gsq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5f0cp")
+
+[node name="back_left_leg" parent="." instance=ExtResource("2_5f0cp")]
+
+[node name="back_right_leg" parent="." instance=ExtResource("2_5f0cp")]
+
+[node name="front_left_leg" parent="." instance=ExtResource("2_5f0cp")]
+
+[node name="front_right_leg" parent="." instance=ExtResource("2_5f0cp")]
