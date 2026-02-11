@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://7o1glmkv2a0l"]
+[gd_scene load_steps=4 format=3 uid="uid://7o1glmkv2a0l"]
 
 [ext_resource type="Script" uid="uid://cbnbyutuwn60k" path="res://scenes/objects/leg/leg.gd" id="1_4ia5t"]
 
-[node name="leg" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ac0w5"]
+size = Vector2(8, 21)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ac0w5"]
+
+[node name="leg" type="RigidBody2D"]
+collision_layer = 2
 script = ExtResource("1_4ia5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_ac0w5")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-2.3841858e-07, 5.5)
+scale = Vector2(7.9999995, 21)
+mesh = SubResource("BoxMesh_ac0w5")

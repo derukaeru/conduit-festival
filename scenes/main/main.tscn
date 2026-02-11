@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://c3rrelniux0af"]
+[gd_scene load_steps=4 format=3 uid="uid://c3rrelniux0af"]
+
+[ext_resource type="Script" uid="uid://b7c8erw3f5y2t" path="res://scenes/main/main.gd" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://k6i5232v2s7e" path="res://scenes/objects/creature/creature.tscn" id="2_iuonh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyk8p"]
+size = Vector2(640, 40)
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_hyk8p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(320, 12)
+shape = SubResource("RectangleShape2D_hyk8p")
+
+[node name="creature" parent="." instance=ExtResource("2_iuonh")]
+position = Vector2(112, 344)
