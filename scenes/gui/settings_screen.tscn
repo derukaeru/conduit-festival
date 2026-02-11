@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ild61ihsg08f"]
+
+[ext_resource type="Script" uid="uid://hrgjkwjs4lcp" path="res://scenes/gui/settings_screen.gd" id="1_wqbck"]
+
+[node name="settings_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqbck")
