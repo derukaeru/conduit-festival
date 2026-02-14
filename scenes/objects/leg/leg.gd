@@ -4,4 +4,4 @@ extends Node2D
 
 func _physics_process(_delta):
 	if Global.input(key):
-		rotate(rotation_degrees + 0.1)
+		rotate(.1)

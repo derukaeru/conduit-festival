@@ -4,51 +4,59 @@
 [ext_resource type="PackedScene" uid="uid://7o1glmkv2a0l" path="res://scenes/objects/leg/leg.tscn" id="2_5f0cp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8wal"]
-size = Vector2(64, 32)
+size = Vector2(64, 24)
 
 [sub_resource type="BoxMesh" id="BoxMesh_j0gsq"]
 
 [node name="creature" type="RigidBody2D"]
-constant_force = Vector2(0, 9.8)
+can_sleep = false
 script = ExtResource("1_j0gsq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 8)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_u8wal")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(-8, 8)
-scale = Vector2(64, 32)
+position = Vector2(0, 4)
+scale = Vector2(64, 24)
 mesh = SubResource("BoxMesh_j0gsq")
 
-[node name="bl" type="PinJoint2D" parent="."]
-position = Vector2(-32, 24)
-node_a = NodePath("..")
-node_b = NodePath("leg")
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-24, 14)
+node_a = NodePath("leg")
+node_b = NodePath("..")
 
-[node name="leg" parent="bl" instance=ExtResource("2_5f0cp")]
+[node name="leg" parent="PinJoint2D" instance=ExtResource("2_5f0cp")]
+mass = 4.0
+gravity_scale = 0.0
 key = "bl"
 
-[node name="br" type="PinJoint2D" parent="."]
-position = Vector2(-32, 24)
-node_a = NodePath("..")
-node_b = NodePath("leg")
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(-24, 14)
+node_a = NodePath("leg2")
+node_b = NodePath("..")
 
-[node name="leg" parent="br" instance=ExtResource("2_5f0cp")]
+[node name="leg2" parent="PinJoint2D2" instance=ExtResource("2_5f0cp")]
+mass = 4.0
+gravity_scale = 0.0
 key = "br"
 
-[node name="fl" type="PinJoint2D" parent="."]
-position = Vector2(16, 24)
-node_a = NodePath("..")
-node_b = NodePath("leg")
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(24, 14)
+node_a = NodePath("leg3")
+node_b = NodePath("..")
 
-[node name="leg" parent="fl" instance=ExtResource("2_5f0cp")]
+[node name="leg3" parent="PinJoint2D3" instance=ExtResource("2_5f0cp")]
+mass = 4.0
+gravity_scale = 0.0
 key = "fl"
 
-[node name="fr" type="PinJoint2D" parent="."]
-position = Vector2(16, 24)
-node_a = NodePath("..")
-node_b = NodePath("leg")
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(24, 14)
+node_a = NodePath("leg4")
+node_b = NodePath("..")
 
-[node name="leg" parent="fr" instance=ExtResource("2_5f0cp")]
+[node name="leg4" parent="PinJoint2D4" instance=ExtResource("2_5f0cp")]
+mass = 4.0
+gravity_scale = 0.0
 key = "fr"
